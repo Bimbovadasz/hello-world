@@ -7,7 +7,7 @@ ledstate=False
 
 try:
     while True:
-        if GPIO.imput(12)=0:
+        if GPIO.input(12)=0:
             pass
         else:
             global ledstate
