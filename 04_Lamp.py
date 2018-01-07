@@ -15,10 +15,11 @@ def buttonevent():
         print "LED off"
     GPIO.output(11,ledstate)
 
-def loop():
-    GPIO.add_event_detect(12,GPIO.FALLING,callback = buttonevent,bouncetime=300)
-	while True:
-	    pass
+def loop(): 
+    GPIO.add_event_detect(buttonPin,GPIO.FALLING,callback = buttonEvent,bouncetime=300)
+    while True:
+	pass
+    
 def kill():
     GPIO.output(11,False)
     GPIO.cleanup()
