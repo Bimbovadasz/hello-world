@@ -6,13 +6,13 @@ GPIO.setup(12,GPIO.IN)
 ledstate=False
 
 try:
+    global ledstate
     while True:
         if GPIO.input(12)=0:
             pass
         else:
-            global ledstate
             ledstate=not ledstate
     GPIO.output(11,ledstate)
 finally:
     GPIO.output(11,False)
-    GPIO.cleanup
+    GPIO.cleanup()
