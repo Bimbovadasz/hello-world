@@ -7,6 +7,7 @@ GPIO.setup(15,GPIO.OUT)
 GPIO.output(7,False)
 GPIO.output(11,False)
 GPIO.output(15,False)
+print "Start"
 for n in range(0,10):
     GPIO.output(7,True)
     time.sleep(0.2)
@@ -18,3 +19,4 @@ for n in range(0,10):
     time.sleep(0.2)
     GPIO.output(15,False)
 GPIO.cleanup()
+print "Done"
