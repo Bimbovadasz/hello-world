@@ -6,19 +6,13 @@ GPIO.setup(12,GPIO.IN)
 ledstate=False
 
 try:
-    def loop():
-        GPIO.add_event_detect(12,GPIO.FALLING,callback=Button,bouncetime=300) 
-        while True:
+    while True:
+        if GPIO.imput(12)=0:
             pass
+        else:
+            global ledstate
+            ledstate=not ledstate
+    GPIO.output(11,ledstate)
 finally:
     GPIO.output(11,False)
     GPIO.cleanup
-
-def Button():
-    global ledstate
-    ledstate=not ledstate
-    if ledstate:
-        print 'Turn on LED'
-    else:
-        print 'Turn off LED'
-    GPIO.output(11,ledstate)
