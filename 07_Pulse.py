@@ -16,6 +16,7 @@ try:
         for dc in range(100,-1,-1):
             p.ChangeDutyCycle(dc)
             time.sleep(0.01)
+        time.sleep(0.5)
 finally:
     GPIO.output(12,False)
     GPIO.cleanup()
