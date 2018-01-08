@@ -9,7 +9,7 @@ try:
             pass
         else:
             Smash=Smash+1
-            print(Smash)
+        print(Smash)
 finally:
     GPIO.cleanup()
             
