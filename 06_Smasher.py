@@ -1,12 +1,11 @@
 import RPi.GPIO as GPIO
-
+Smash=0
 def setup():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12,GPIO.IN)
     print "Smash that button!"
-    Smash=0 
-
-def event():
+     
+def event(blub):
     global Smash
     print(Smash)
     Smash=Smash+1
