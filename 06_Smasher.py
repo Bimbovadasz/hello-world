@@ -8,8 +8,8 @@ try:
         if GPIO.input(12)==0:
             pass
         else:
-            Smash==Smash+1
-            print(Smash)
+            Smash=Smash+1
+        print(Smash)
 finally:
     GPIO.cleanup()
             
