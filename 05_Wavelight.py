@@ -15,7 +15,7 @@ try:
             print(pin)
             time.sleep(0.1)
             GPIO.output(pin,False)
-        for pin in ledpins[10:0:-1]:
+        for pin in ledpins[9:0:-1]:
             GPIO.output(pin,True)
             print(pin)
             time.sleep(0.1)
