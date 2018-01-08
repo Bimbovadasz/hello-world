@@ -12,10 +12,12 @@ try:
     while True:
         for pin in ledpins:
             GPIO.output(pin,True)
+            print(pin)
             time.sleep(0.1)
             GPIO.output(pin,False)
         for pin in ledpins[10:0:-1]:
             GPIO.output(pin,True)
+            print(pin)
             time.sleep(0.1)
             GPIO.output(pin,False)
 finally:
