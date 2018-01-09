@@ -5,7 +5,6 @@ import math
 def setup(blub):
     print "Doin it plox"
     global p
-    global blub
     GPIO.setmode(GPIO.Board)
     GPIO.setup(11,GPIO.OUT)
     GPIO.setup(12, GPIO.IN)
@@ -37,7 +36,7 @@ def kill():
     GPIO.cleanup()
 
 if __name__=="__main__":
-    setup(blub)
+    setup()
     try:
         magic()
     finally:
