@@ -5,6 +5,7 @@ pins=[11,12,13]
 
 def setup():
     global pins
+    global pR,pG,pB
     print "Doin it plox"
     GPIO.setmode(GPIO.BOARD)
     for pin in pins:
