@@ -5,6 +5,7 @@ import math
 def setup(blub):
     print "Doin it plox"
     global p
+    global blub
     GPIO.setmode(GPIO.Board)
     GPIO.setup(11,GPIO.OUT)
     GPIO.setup(12, GPIO.IN)
