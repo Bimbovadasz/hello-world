@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import math
-blub=halp
+blub=1
 def setup(blub):
     print "Doin it plox"
     global p
