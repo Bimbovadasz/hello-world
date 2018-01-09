@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import math
-
+blub=halp
 def setup(blub):
     print "Doin it plox"
     global p
@@ -36,7 +36,6 @@ def kill():
     GPIO.cleanup()
 
 if __name__=="__main__":
-    global blub
     setup(blub)
     try:
         magic()
