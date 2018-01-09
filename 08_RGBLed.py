@@ -37,7 +37,7 @@ def kill():
 if __name__=="__main__":
     setup()
     try:
-        color(blub)
+        color()
     finally:
         kill()
     
