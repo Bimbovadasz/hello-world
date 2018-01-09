@@ -18,7 +18,7 @@ def setup():
     pG.start(0)
     pB.start(0)
 
-def color(blub):
+def color():
     while True:
         r=random.randint(0,100)
         g=random.randint(0,100)
