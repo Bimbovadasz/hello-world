@@ -36,7 +36,8 @@ def kill():
     GPIO.cleanup()
 
 if __name__=="__main__":
-    setup()
+    global blub
+    setup(blub)
     try:
         magic()
     finally:
