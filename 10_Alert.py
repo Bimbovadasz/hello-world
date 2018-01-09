@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import math
 
-def setup():
+def setup(blub):
     print "Doin it plox"
     global p
     GPIO.setmode(GPIO.Board)
@@ -36,7 +36,7 @@ def kill():
     GPIO.cleanup()
 
 if __name__=="__main__":
-    setup()
+    setup(blub)
     try:
         magic()
     finally:
