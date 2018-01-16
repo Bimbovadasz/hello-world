@@ -23,10 +23,10 @@ def analogwrite():
 
 def loop():
     while True:
-        Value=analogread(0)
+        value=analogread(0)
         p.ChangeDutyCycle(value*100/255)
-        Voltage=value*3.3/255
-        print 'Value: %d, Voltage %d' %(Value,Voltage)
+        voltage=value*3.3/255
+        print 'Value: %d, Voltage %d' %(value,voltage)
         time.sleep(0.01)
 
 def kill():
