@@ -26,7 +26,7 @@ def loop():
         value=analogread(0)
         p.ChangeDutyCycle(value*100/255)
         voltage=value*3.3/255
-        print 'Value: %d, Voltage %.2f' %(value,voltage)
+        print 'Value: %d, Voltage: %.2f volts' %(value,voltage)
         time.sleep(0.01)
 
 def kill():
