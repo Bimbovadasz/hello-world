@@ -10,14 +10,18 @@ def setup():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12,GPIO.IN)
 
-def read(ch):
-    value=bus.read_byte_data(addr,cmd+ch)
+def readx():
+    value=bus.read_byte_data(addr,cmd+1)
+    return value
+
+def ready():
+    value=bus.read_byte_data(addr,cmd+2)
     return value
 
 def loop():
     while True:
-        valX=read(1)
-        valY=read(2)
+        valX=readx()
+        valY=ready()
         if GPIO.input(12)==0:
             valZ=1
         else:
