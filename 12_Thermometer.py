@@ -22,7 +22,7 @@ def loop():
         T2=1/(1/298.15+math.log(R2/10)/3950.0)
         TC=T2-273.15
         print "Hey bro! ADC value: %d, Voltage: %.2f Volts, Temperature: %.2f Celsius" %(value, voltage, TC)
-        time.sleep(0.01)
+        time.sleep(0.05)
 
 def kill():
     GPIO.cleanup()
