@@ -26,6 +26,7 @@ def loop():
 
 def kill():
     GPIO.cleanup()
+    bus.close()
 
 if __name__=="__main__":
     print "Doin it plox"
