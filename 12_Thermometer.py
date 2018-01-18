@@ -22,6 +22,7 @@ def loop():
         tempK = 1/(1/(273.15 + 25) + math.log(Rt/10)/3950.0)
         TC=tempK-273.15
         print "Hey bro! ADC value: %d, Voltage: %.2f Volts, Temperature: %.2f Celsius" %(value, voltage, TC)
+        time.sleep(0.01)
 
 def kill():
     GPIO.cleanup()
