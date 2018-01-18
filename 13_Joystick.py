@@ -11,11 +11,11 @@ def setup():
     GPIO.setup(12,GPIO.IN)
 
 def readx():
-    value=bus.read_byte_data(addr,cmd+1)
+    value=bus.read_byte_data(addr,cmd+0)
     return value
 
 def ready():
-    value=bus.read_byte_data(addr,cmd+2)
+    value=bus.read_byte_data(addr,cmd+3)
     return value
 
 def loop():
