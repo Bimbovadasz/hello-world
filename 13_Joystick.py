@@ -20,8 +20,8 @@ def ready():
 
 def loop():
     while True:
-        valY=ready()
         valX=readx()
+        valY=ready()
         if GPIO.input(12)==0:
             valZ=1
         else:
