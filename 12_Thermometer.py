@@ -16,7 +16,7 @@ def setup():
 
 def loop():
     while True:
-        value=analogread(1)
+        value=analogread(0)
         voltage=(3.3/255)*value
         R2=10*voltage/(3.3-voltage)
         T2=1/(1/298.15+math.log(R2/10)/3950)
