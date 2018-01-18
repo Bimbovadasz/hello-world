@@ -22,8 +22,8 @@ def loop():
             valZ=1
         else:
             valZ=0
-        print "Oh Boi! X value: %d, \t Y value: %d, \t Z value: %d" %(valX,valY,valZ)
-        time.sleep(0.1)
+        print "Oh Boi! X value: %d \t Y value: %d \t Z value: %d" %(valX,valY,valZ)
+        time.sleep(0.05)
 
 def kill():
     bus.close()
