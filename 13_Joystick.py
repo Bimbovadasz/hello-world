@@ -15,13 +15,13 @@ def readx():
     return value
 
 def ready():
-    value=bus.read_byte_data(addr,cmd+3)
+    value=bus.read_byte_data(addr,cmd+1)
     return value
 
 def loop():
     while True:
-        valX=readx()
         valY=ready()
+        valX=readx()
         if GPIO.input(12)==0:
             valZ=1
         else:
