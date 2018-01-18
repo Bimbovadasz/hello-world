@@ -17,10 +17,13 @@ def read(ch):
 def loop():
     while True:
         valX=read(1)
-        valY=read(0)
-        valZ=GPIO.input(12)
-        print "Oh Boi! X value: %d, Y value: %d, Z value: %d" %(valX,valY,valZ)
-        time.sleep(0.05)
+        valY=read(2)
+        if GPIO.input(12)==0:
+            valZ=1
+        else:
+            valZ=0
+        print "Oh Boi! X value: %d, \t Y value: %d, \t Z value: %d" %(valX,valY,valZ)
+        time.sleep(0.1)
 
 def kill():
     bus.close()
