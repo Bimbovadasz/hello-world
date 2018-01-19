@@ -18,7 +18,7 @@ def loop():
     while True:
         value=analogread(0)
         voltage=(3.3/255)*value
-        R2=33/voltage-1
+        R2=(33/voltage)-1
         T2=1/(1/298.15+math.log(R2/10)/3950.0)
         TC=T2-273.15
         print "Hey bro! ADC value: %d, Voltage: %.2f Volts, Temperature: %.2f Celsius" %(value, voltage, TC)
