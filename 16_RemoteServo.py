@@ -38,14 +38,15 @@ def CCWrev():
     print "Hoooo"
 
 def control():
-    AV=analogread()
-    if AV>150:
-        CCWrev()
-    elif AV<106:
-        CWrev()
-    else:
-        p.ChangeDutyCycle(7.5)
-        print "Sup"
+    while True:
+        AV=analogread()
+        if AV>150:
+            CCWrev()
+        elif AV<106:
+            CWrev()
+        else:
+            p.ChangeDutyCycle(7.5)
+            print "Sup"
 
 def kill():
     p.stop()
