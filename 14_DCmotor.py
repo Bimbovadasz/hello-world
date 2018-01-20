@@ -37,10 +37,11 @@ def motor(read):
     print "Duty cycle is %d" %((100/128)*(abs(mval)))
 
 def loop():
-    value=analogread()
-    print "ADC value: %d" %(value)
-    motor(value)
-    time.sleep(0.05)
+    while True:
+        value=analogread()
+        print "ADC value: %d" %(value)
+        motor(value)
+        time.sleep(0.05)
 
 def kill():
     GPIO.cleanup()
