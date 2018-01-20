@@ -21,8 +21,6 @@ def analogread():
 
 def motor(read):
     mval=read-128
-    p.ChangeDutyCycle(abs(mval)*100/127)
-    print "Duty cycle is %d" %(abs(mval)*100/127)
     if mval>5:
         GPIO.output(11,True)
         GPIO.output(13,False)
@@ -35,7 +33,8 @@ def motor(read):
         GPIO.output(11,False)
         GPIO.output(11,False)
         print "Doin nothing for fun"
-    
+    p.ChangeDutyCycle(abs(mval)*100/127)
+    print "Duty cycle is %d" %(abs(mval)*100/127)
 
 def loop():
     while True:
