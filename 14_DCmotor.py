@@ -21,11 +21,11 @@ def analogread():
 
 def motor(read):
     mval=read-128
-    if mval>0:
+    if mval>5:
         GPIO.output(11,True)
         GPIO.output(13,False)
         print "Oi forward plox"
-    elif mval<0:
+    elif mval<-5:
         GPIO.output(11,False)
         GPIO.output(13,True)
         print "Backing up bro"
