@@ -40,6 +40,7 @@ def CCWrev():
 def control():
     while True:
         AV=analogread()
+        print(AV)
         if AV>150:
             CCWrev()
         elif AV<106:
