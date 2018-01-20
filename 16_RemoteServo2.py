@@ -28,7 +28,7 @@ def control():
             p.ChangeDutyCycle(12.5)
         else:
             p.ChangeDutyCycle(7.5)
-        time.sleep(0.05)
+        time.sleep(0.1)
 
 def kill():
     p.stop()
