@@ -45,9 +45,6 @@ def control():
             CCWrev()
         elif AV<106:
             CWrev()
-        else:
-            p.ChangeDutyCycle(7.5)
-            print "Sup"
 
 def kill():
     p.stop()
