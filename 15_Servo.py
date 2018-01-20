@@ -37,3 +37,5 @@ if __name__=="__main__":
     setup()
     try:
         loop()
+    finally:
+        kill()
