@@ -6,10 +6,6 @@ addr=0x48
 cmd=0x40
 bus=smbus.SMBus(1)
 
-export PATH=$PATH:/opt/nodejs/bin/
-unset NODE_PATH
-blynk-client 4a3e29b8361f4eb0b528192e59f4d02d
-
 def setup():
     global p
     GPIO.setmode(GPIO.BOARD)
