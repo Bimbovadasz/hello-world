@@ -28,11 +28,11 @@ def cycle(seq):
 
 def loop():
     while True:
-        cycle(seqCW)
         print "CW"
+        cycle(seqCW)
         time.sleep(0.5)
-        cycle(seqCCW)
         print "CCW"
+        cycle(seqCCW)
         time.sleep(0.5)
 
 def kill():
