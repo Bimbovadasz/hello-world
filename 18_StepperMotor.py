@@ -24,7 +24,7 @@ def cycle(seq):
         for step in range(4):
             for pin in range(4):
                 GPIO.output(ControlPin[pin], seq[step][pin])
-            time.sleep(0.05)
+            time.sleep(0.005)
 
 def loop():
     while True:
