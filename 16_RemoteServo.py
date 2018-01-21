@@ -18,33 +18,17 @@ def analogread():
     value=bus.read_byte_data(addr,cmd+0)
     return value
 
-def servo(angle):
-    if angle<0:
-        angle=0
-    elif angle>180:
-        angle=180
-    p.ChangeDutyCycle(angle*12.5/180)
-    
-def CWrev():
-    for dc in range(0,181,1):
-        servo(dc)
-        time.sleep(0.005)
-    print "Heeeey"
-    
-def CCWrev():
-    for dc in range(180,-1,-1):
-        servo(dc)
-        time.sleep(0.005)
-    print "Hoooo"
-
 def control():
     while True:
         AV=analogread()
         print(AV)
         if AV>150:
-            CCWrev()
+            p.ChangeDutyCycle(2.5)
         elif AV<106:
-            CWrev()
+            p.ChangeDutyCycle(12.5)
+        else:
+            p.ChangeDutyCycle(7.5)
+        time.sleep(0.05)
 
 def kill():
     p.stop()
