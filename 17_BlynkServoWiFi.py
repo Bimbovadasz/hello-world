@@ -1,0 +1,48 @@
+import RPi.GPIO as GPIO
+import time
+import smbus
+
+addr=0x48
+cmd=0x40
+bus=smbus.SMBus(1)
+
+export PATH=$PATH:/opt/nodejs/bin/
+unset NODE_PATH
+blynk-client 4a3e29b8361f4eb0b528192e59f4d02d
+
+def setup():
+    global p
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(11,GPIO.OUT)
+    GPIO.output(11,False)
+    p=GPIO.PWM(11,50)
+    p.start(7.5)
+    
+def analogread():
+    value=bus.read_byte_data(addr,cmd+0)
+    return value
+
+def control():
+    while True:
+        AV=analogread()
+        print(AV)
+        if AV>150:
+            p.ChangeDutyCycle(2.5)
+        elif AV<106:
+            p.ChangeDutyCycle(12.5)
+        else:
+            p.ChangeDutyCycle(7.5)
+        time.sleep(0.05)
+
+def kill():
+    p.stop()
+    GPIO.cleanup()
+    bus.close
+
+if __name__=="__main__":
+    print "Doin it plox"
+    setup()
+    try:
+        control()
+    finally:
+        kill()
