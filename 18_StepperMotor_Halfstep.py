@@ -29,7 +29,7 @@ def setup():
 
 def cycle(seq):
     for i in range(512):
-        for step in range(4):
+        for step in range(8):
             for pin in range(4):
                 GPIO.output(ControlPin[pin], seq[step][pin])
             time.sleep(0.003)
