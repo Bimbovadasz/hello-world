@@ -29,10 +29,7 @@ def control():
         for i in range(len(num)):
             transfer(num[i])
             time.sleep(1)
-        for i in range(len(num)-1,-1,-1):
-            transfer(num[i])
-            time.sleep(1)
-
+        
 def kill():
     GPIO.cleanup()
 
