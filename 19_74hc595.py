@@ -34,7 +34,7 @@ def control():
             time.sleep(0.05)
 
 def kill():
-    GPIO.cleanup():
+    GPIO.cleanup()
 
 if __name__=="__main__":
     print "Doin it plox"
