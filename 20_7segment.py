@@ -27,9 +27,9 @@ def transfer(dat):
 
 def control():
     while True:
-        for i in range(len(num)):
-            transfer(num[i])
-            time.sleep(1)
+        for i in range(len(blub)):
+            transfer(blub[i])
+            time.sleep(0.5)
         
 def kill():
     GPIO.cleanup()
