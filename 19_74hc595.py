@@ -23,17 +23,17 @@ def transfer(dat):
     for bit in range(0,8):
         GPIO.output(latch,False)
         GPIO.output(clock,False)
-        GPIO.output(data,0x01&(dat>>bit))
+        GPIO.output(data,0x80&(dat<<bit))
         GPIO.output(clock,True)
         GPIO.output(latch,True)
 
 def control():
     while True:
         for i in range(0,8):
-            transfer(LED3[i])
+            transfer(LED1[i])
             time.sleep(0.1)
         for i in range(7,-1,-1):
-            transfer(LED3[i])
+            transfer(LED1[i])
             time.sleep(0.1)
 
 def kill():
