@@ -20,7 +20,7 @@ def transfer(data):
     for bit in range(0,8):
         GPIO.output(latch,False)
         GPIO.output(clock,False)
-        GPIO.output(data, 0x80&(data<<bit))
+        GPIO.output(data, 0x01&(data<<bit))
         GPIO.output(clock,True)
         GPIO.output(latch,True)
 
