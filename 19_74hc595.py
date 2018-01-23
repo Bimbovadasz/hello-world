@@ -30,10 +30,10 @@ def transfer(dat):
 def control():
     while True:
         for i in range(0,8):
-            transfer(LED1[i])
+            transfer(LED2[i])
             time.sleep(0.1)
         for i in range(7,-1,-1):
-            transfer(LED1[i])
+            transfer(LED2[i])
             time.sleep(0.1)
 
 def kill():
