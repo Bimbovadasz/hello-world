@@ -29,7 +29,7 @@ def control():
     while True:
         for i in range(len(num)):
             transfer(num[i])
-            time.sleep(0.5)
+            time.sleep(1)
         
 def kill():
     GPIO.cleanup()
