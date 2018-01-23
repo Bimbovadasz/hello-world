@@ -26,10 +26,10 @@ def transfer(dat):
 
 def control():
     while True:
-        for i in range(0,8):
+        for i in range(0,7):
             transfer(LED[i])
             time.sleep(0.05)
-        for i in range(7,-1,-1):
+        for i in range(7,0,-1):
             transfer(LED[i])
             time.sleep(0.05)
 
