@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-data=11
+datapin=11
 latch=13
 clock=15
 
@@ -20,7 +20,7 @@ def transfer(data):
     for bit in range(0,8):
         GPIO.output(latch,False)
         GPIO.output(clock,False)
-        GPIO.output(data, 0x80 & (dat << bit))
+        GPIO.output(datapin, 0x80 & (data << bit))
         GPIO.output(clock,True)
         GPIO.output(latch,True)
 
