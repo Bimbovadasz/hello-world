@@ -64,7 +64,7 @@ def timer():
 def loop():
     global secs
     while True:
-        control(secs)
+        control(25)
 
 def kill():
     GPIO.cleanup()
