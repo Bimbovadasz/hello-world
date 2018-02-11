@@ -8,6 +8,8 @@ clock=12
 num=(0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90)
 digitpin=(19,15,13,11)
 
+secs=0
+
 def setup():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(data,GPIO.OUT)
@@ -54,13 +56,13 @@ def control(dec):
     
 def timer():
     global secs
-    secs=0
     for n in range:
         secs=secs+1
         print(secs)
         time.sleep(1)
 
 def loop():
+    global secs
     while True:
         control(secs)
 
