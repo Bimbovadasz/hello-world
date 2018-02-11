@@ -8,8 +8,6 @@ clock=12
 num=(0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90)
 digitpin=(19,15,13,11)
 
-secs=0
-
 def setup():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(data,GPIO.OUT)
@@ -31,10 +29,10 @@ def transfer(dat):
         GPIO.output(latch,True)
 
 def selecttube(tube):
-    GPIO.output(digitpin[0],False if ((tube&0x08)==0x08) else True)
-    GPIO.output(digitpin[1],False if ((tube&0x04)==0x04) else True)
-    GPIO.output(digitpin[2],False if ((tube&0x02)==0x02) else True)
-    GPIO.output(digitpin[3],False if ((tube&0x01)==0x01) else True)
+    GPIO.output(digitpin[3],False if ((tube&0x08)==0x08) else True)
+    GPIO.output(digitpin[2],False if ((tube&0x04)==0x04) else True)
+    GPIO.output(digitpin[1],False if ((tube&0x02)==0x02) else True)
+    GPIO.output(digitpin[0],False if ((tube&0x01)==0x01) else True)
 
 def control(dec):
     transfer(0xff)
@@ -55,16 +53,17 @@ def control(dec):
     time.sleep(.003)
     
 def timer():
-    global secs
+    secs=0
     for n in range:
         secs=secs+1
         print(secs)
+        return secs
         time.sleep(1)
 
 def loop():
-    global secs
     while True:
-        control(25)
+        number=timer()
+        control(number)
 
 def kill():
     GPIO.cleanup()
