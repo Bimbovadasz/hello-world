@@ -54,12 +54,16 @@ def control(dec,freq):
     
 def timer():
     secs=0
+    global secs
     while True:
-        freq=0.003
-        control(secs,freq)
         print "Time elapsed: %d" %(secs)
         time.sleep(1)
         secs+=1
+
+def display():
+    freq=0.003
+        while True:
+            control(secs,freq)
 
 def kill():
     GPIO.cleanup()
@@ -69,5 +73,6 @@ if __name__=="__main__":
     setup()
     try:
         timer()
+        display()
     finally:
         kill()
