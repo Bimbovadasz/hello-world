@@ -53,8 +53,8 @@ def control(dec,freq):
     time.sleep(freq)
     
 def timer():
-    secs=0
     global secs
+    secs=0
     while True:
         print "Time elapsed: %d" %(secs)
         time.sleep(1)
