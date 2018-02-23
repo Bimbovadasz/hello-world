@@ -58,7 +58,7 @@ def control(dec,freq):
 def timer():
     global secs
     global t
-    t=threading.Timer(1.0,timer) #önmegidézős öntartós trics a folyamatos működés érdekében
+    t=threading.Timer(1.0,timer) #onmegidezos ontartos trics a folyamatos mukodes erdekeben
     t.start()
     secs+=1
     print "Time elapsed: %d" %(secs)
@@ -66,7 +66,7 @@ def timer():
 def loop():
     freq=0.003
     global secs
-    global t #így a t.cancel() működik a kill()-be 
+    global t #igy a t.cancel() mukodik a kill()-be 
     t=threading.Timer(1.0,timer)
     t.start()
     while True:
