@@ -62,8 +62,8 @@ def timer():
 
 def display():
     freq=0.003
-        while True:
-            control(secs,freq)
+    while True:
+        control(secs,freq)
 
 def kill():
     GPIO.cleanup()
