@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import threading
 
 data=18
 latch=16
@@ -7,6 +8,9 @@ clock=12
 
 num=(0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90)
 digitpin=(19,15,13,11)
+
+global secs
+secs=0
 
 def setup():
     GPIO.setmode(GPIO.BOARD)
@@ -53,15 +57,14 @@ def control(dec,freq):
     time.sleep(freq)
     
 def timer():
-    global secs
-    secs=0
-    while True:
-        print "Time elapsed: %d" %(secs)
-        time.sleep(1)
-        secs+=1
-
-def display():
+    secs+=1
+    print "Time elapsed: %d" %(secs)
+       
+    
+def loop():
     freq=0.003
+    t=threading.Timer(1.0,timer)
+    t.start()
     while True:
         control(secs,freq)
 
@@ -72,7 +75,6 @@ if __name__=="__main__":
     print "Doin it plox"
     setup()
     try:
-        timer()
-        display()
+        loop()
     finally:
         kill()
