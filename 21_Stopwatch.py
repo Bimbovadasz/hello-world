@@ -34,36 +34,32 @@ def selecttube(tube):
     GPIO.output(digitpin[1],False if ((tube&0x02)==0x02) else True)
     GPIO.output(digitpin[0],False if ((tube&0x01)==0x01) else True)
 
-def control(dec):
+def control(dec,time):
     transfer(0xff)
     selecttube(0x01)
     transfer(num[dec%10])
-    time.sleep(.003)
+    time.sleep(time)
     transfer(0xff)
     selecttube(0x02)
     transfer(num[dec%100/10])
-    time.sleep(.003)
+    time.sleep(time)
     transfer(0xff)
     selecttube(0x04)
     transfer(num[dec%1000/100])
-    time.sleep(.003)
+    time.sleep(time)
     transfer(0xff)
     selecttube(0x08)
     transfer(num[dec%10000/1000])
-    time.sleep(.003)
+    time.sleep(time)
     
 def timer():
     secs=0
-    for n in range:
-        secs=secs+1
-        print(secs)
-        return secs
-        time.sleep(1)
-
-def loop():
     while True:
-        number=timer()
-        control(number)
+        time=0.003
+        control(secs,time)
+        print "Time elapsed: %d" %(secs)
+        time.sleep(1)
+        secs+=1
 
 def kill():
     GPIO.cleanup()
@@ -72,6 +68,6 @@ if __name__=="__main__":
     print "Doin it plox"
     setup()
     try:
-        loop()
+        timer()
     finally:
         kill()
