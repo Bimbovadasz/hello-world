@@ -34,29 +34,29 @@ def selecttube(tube):
     GPIO.output(digitpin[1],False if ((tube&0x02)==0x02) else True)
     GPIO.output(digitpin[0],False if ((tube&0x01)==0x01) else True)
 
-def control(dec,time):
+def control(dec,freq):
     transfer(0xff)
     selecttube(0x01)
     transfer(num[dec%10])
-    time.sleep(time)
+    time.sleep(freq)
     transfer(0xff)
     selecttube(0x02)
     transfer(num[dec%100/10])
-    time.sleep(time)
+    time.sleep(freq)
     transfer(0xff)
     selecttube(0x04)
     transfer(num[dec%1000/100])
-    time.sleep(time)
+    time.sleep(freq)
     transfer(0xff)
     selecttube(0x08)
     transfer(num[dec%10000/1000])
-    time.sleep(time)
+    time.sleep(freq)
     
 def timer():
     secs=0
     while True:
-        time=0.003
-        control(secs,time)
+        freq=0.003
+        control(secs,freq)
         print "Time elapsed: %d" %(secs)
         time.sleep(1)
         secs+=1
