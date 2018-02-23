@@ -10,7 +10,6 @@ num=(0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90)
 digitpin=(19,15,13,11)
 
 secs=0
-global secs
 
 def setup():
     GPIO.setmode(GPIO.BOARD)
@@ -57,13 +56,17 @@ def control(dec,freq):
     time.sleep(freq)
     
 def timer():
-    t=threading.Timer(1.0,timer)
+    global secs
+    global t
+    t=threading.Timer(1.0,timer) #önmegidézős öntartós trics a folyamatos működés érdekében
     t.start()
     secs+=1
     print "Time elapsed: %d" %(secs)
     
 def loop():
     freq=0.003
+    global secs
+    global t #így a t.cancel() működik a kill()-be 
     t=threading.Timer(1.0,timer)
     t.start()
     while True:
