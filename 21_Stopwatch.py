@@ -57,9 +57,10 @@ def control(dec,freq):
     time.sleep(freq)
     
 def timer():
+    t=threading.Timer(1.0,timer)
+    t.start()
     secs+=1
     print "Time elapsed: %d" %(secs)
-       
     
 def loop():
     freq=0.003
@@ -70,6 +71,7 @@ def loop():
 
 def kill():
     GPIO.cleanup()
+    t.cancel()
 
 if __name__=="__main__":
     print "Doin it plox"
