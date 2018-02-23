@@ -65,7 +65,7 @@ def timer():
     print "Time elapsed: %d" %(secs)
     
 def loop():
-    freq=0.08
+    freq=0.02
     global secs
     global t #igy a t.cancel() mukodik a kill()-be 
     t=threading.Timer(1.0,timer)
