@@ -11,7 +11,7 @@ def setup():
         GPIO.output(pin,False)
 
 def test():
-    for pin in Fans():
+    for pin in Fans:
         print(pin)
         GPIO.output(pin,True)
         time.sleep(2)
