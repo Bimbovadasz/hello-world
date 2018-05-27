@@ -28,5 +28,5 @@ if __name__ == '__main__':
     setup()
     try:
         switch()
-    else:
+    finally:
         kill()
