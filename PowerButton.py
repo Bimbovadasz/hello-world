@@ -1,9 +1,10 @@
 # power button script FTW
 
+import RPi.GPIO as GPIO
+import time
+import subprocess
+    
 def setup():
-    import RPi.GPIO as GPIO
-    import time
-    import subprocess
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.setup(11, GPIO.OUT)
@@ -20,6 +21,12 @@ def switch():
                 GPIO.output(11, True)
                 time.sleep(0.5)
 
+def kill():
+    GPIO.cleanup()
+
 if __name__ == '__main__':
     setup()
-    switch()
+    try:
+        switch()
+    else:
+        kill()
