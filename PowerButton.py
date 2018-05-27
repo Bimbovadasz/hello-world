@@ -6,14 +6,14 @@ import subprocess
     
 def setup():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(12, GPIO.IN)
+    GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(11, GPIO.OUT)
     GPIO.output(11, True)
 
 def switch():
     while True:
         button = GPIO.input(12)
-        if button == False:
+        if button == True:
             subprocess.call("shutdown now", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             while True:
                 GPIO.output(11, False)
