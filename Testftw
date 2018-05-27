@@ -3,7 +3,7 @@ import time
     
 def setup():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(12, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 def switch():
     while True:
