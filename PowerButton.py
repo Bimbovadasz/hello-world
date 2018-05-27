@@ -20,12 +20,6 @@ def switch():
                 GPIO.output(11, True)
                 time.sleep(0.5)
 
-def kill():
-    GPIO.cleanup()
-
 if __name__ == '__main__':
     setup()
-    try:
-        switch()
-    finally:
-        kill()
+    switch()
