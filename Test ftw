@@ -1,0 +1,24 @@
+import RPi.GPIO as GPIO
+import time
+    
+def setup():
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(12, GPIO.IN)
+
+def switch():
+    while True:
+        button = GPIO.input(12)
+        if button == False:
+            print "off"
+        if button == True:
+            print "on"
+
+def kill():
+    GPIO.cleanup()
+
+if __name__ == '__main__':
+    setup()
+    try:
+        switch()
+    finally:
+        kill()
